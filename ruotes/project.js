@@ -9,7 +9,9 @@ var multipartMiddleware = multipart({ uploadDir: './uploads' });
  router.post('/save-project', ProjectController.saveProject);
  router.get('/project/:id?', ProjectController.getProject);
  router.get('/projects', ProjectController.getProjects);
- router.put('/update-project/:id?', ProjectController.updateProject);
+ router.delete('/project/:id', ProjectController.deleteProject);
+router.delete('/project2/:id', ProjectController.deleteProject2);
+ router.put('/update-project/:id', ProjectController.updateProject);
  router.post('/upload-image/:id',multipartMiddleware, ProjectController.uploadImage);
  router.get('/get-image/:image', ProjectController.getImagefile);
 
