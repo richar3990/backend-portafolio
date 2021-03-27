@@ -7,6 +7,7 @@ var app = express();
 //cargar archivos de rutas
 
 var project_routes = require('./ruotes/project');
+var user_routes = require('./ruotes/user');
 
 //middlewares
 app.use(bodyParser.urlencoded({extended: false}));
@@ -23,6 +24,7 @@ app.use((req, res, next) => {
 
 // rutas
 app.use('/api', project_routes);
+app.use('/api', user_routes);
 
 
 //exportar modulo
